@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JalSakhi – Village Water-Quality Advisory Assistant</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ["Poppins", "sans-serif"] },
+          colors: {
+            ocean: { 50: "#ecfeff", 100: "#cffafe", 200: "#a5f3fc", 300: "#67e8f9", 400: "#22d3ee",
+                     500: "#06b6d4", 600: "#0891b2", 700: "#0e7490", 800: "#155e75", 900: "#164e63", 950: "#083344" }
+          },
+          keyframes: {
+            floaty: { "0%,100%": { transform: "translateY(0)" }, "50%": { transform: "translateY(-14px)" } },
+            wave: { "0%": { transform: "translateX(0)" }, "100%": { transform: "translateX(-50%)" } },
+            rise: { "0%": { opacity: 0, transform: "translateY(24px)" }, "100%": { opacity: 1, transform: "translateY(0)" } }
+          },
+          animation: { floaty: "floaty 5s ease-in-out infinite", wave: "wave 14s linear infinite",
+                       wave2: "wave 22s linear infinite reverse", rise: "rise .7s ease both" }
+        }
+      }
+    };
+  </script>
+  <style>
+    body { font-family: "Poppins", sans-serif; background: #f0fbfd; }
+    .glass { background: rgba(255,255,255,.14); backdrop-filter: blur(14px); border: 1px solid rgba(255,255,255,.28); }
+    .hero-bg { background: radial-gradient(circle at 20% 10%, #22d3ee55, transparent 40%),
+               linear-gradient(160deg, #083344 0%, #0e7490 55%, #06b6d4 100%); }
+    .card { background: #fff; border-radius: 1.25rem; box-shadow: 0 10px 30px -12px rgba(8,51,68,.25); }
+    .btn { transition: all .2s; }
+    .btn:hover { transform: translateY(-2px); }
+    input, select { outline: none; }
+    input:focus, select:focus { box-shadow: 0 0 0 3px #22d3ee66; border-color: #06b6d4; }
+    input[type=range] { accent-color: #0891b2; }
+    .drop { border-radius: 50% 50% 50% 0; transform: rotate(-45deg); }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.24.7/babel.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script type="text/babel" data-presets="react" src="/static/app.jsx"></script>
+</body>
+</html>
